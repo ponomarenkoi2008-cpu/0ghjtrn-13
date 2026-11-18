@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приют для животных — Главная</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="catalog.js" defer></script>
+</head>
+<body>
+    <header>
+        <p>Приют для животных «Лапки» · Вариант 24</p>
+    </header>
+
+    <main class="page">
+        <nav>
+            <a href="catalog.html">Каталог</a>
+            <a href="form.html">Заявка</a>
+        </nav>
+
+        <h1>Добро пожаловать в приют</h1>
+
+        <!-- Абзац статуса для скрипта -->
+        <p id="status" role="status"></p>
+
+        <!-- Фото кота/кошки из папки images -->
+        <img src="images/item1.png" alt="Кошка Луна — питомец приюта">
+
+        <p>Здесь вы можете познакомиться с нашими питомцами и рассчитать необходимое количество игрушек для посещения.</p>
+
+        <!-- Кнопки управления и список названий -->
+        <p>
+            <button id="show-names" type="button">Показать названия</button>
+            <button id="hide-names" type="button">Скрыть названия</button>
+        </p>
+        <ul id="names"></ul>
+    </main>
+</body>
+</html>

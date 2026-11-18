@@ -1,0 +1,311 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F7EEFA;
+    color: #392844;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    overflow-wrap: anywhere; /* Защита от горизонтальной прокрутки по фото задания */
+}
+
+main.page {
+    width: 92%;
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+header {
+    background-color: #754383;
+    color: #FFFFFF;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+header p {
+    margin: 0;
+    font-weight: normal;
+}
+
+h1, h2, a {
+    color: #754383;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Родительский флекс-контейнер для карточек (Шаг 3) */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Стили карточек внутри флекс-контейнера */
+.products > .card {
+    flex: 1 1 16rem;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+/* Адаптивное флекс-меню (Шаг 4) */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 20px;
+}
+
+nav a {
+    display: block;
+    padding: 8px 12px;
+    color: #754383;
+    background-color: #FFFFFF;
+    border: 1px solid #754383;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: normal;
+    margin: 0;
+    max-width: 100%;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+    text-decoration: underline;
+    background-color: #754383;
+    color: #FFFFFF;
+}
+
+nav a[aria-current="page"] {
+    font-weight: bold;
+    border-width: 2px;
+    background-color: rgba(117, 67, 131, 0.1);
+}
+
+.catalog-items article,
+.card {
+    background: #FFFFFF;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 4px solid #754383;
+}
+
+.card .specs {
+    background-color: #754383;
+    color: #FFFFFF;
+    padding: 0.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.card .description {
+    background-color: #FEF3C7;
+    color: #78350F;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+form,
+.request-form {
+    background: #FFFFFF;
+    max-width: 500px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #754383;
+    border-radius: 8px;
+}
+
+form p,
+.request-form p {
+    margin-bottom: 15px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Адаптивные поля по Шагу 5 */
+input[type="number"],
+input[type="text"],
+select,
+textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 8px;
+    border: 2px solid #754383;
+    border-radius: 0px;
+    background-color: #FFFFFF;
+    color: #392844;
+    box-sizing: border-box;
+    transition: background-color 0.2s;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+    vertical-align: middle;
+    accent-color: #754383 !important;
+}
+
+input[type="checkbox"] + label {
+    display: inline;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+input[type="range"] {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    accent-color: #754383;
+}
+
+.range-labels {
+    display: block;
+    margin-top: 5px;
+    color: #392844;
+}
+
+button[type="submit"],
+.request-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #754383;
+    color: #FFFFFF;
+    border: 2px solid #754383;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible,
+.request-form button:hover,
+.request-form button:focus-visible {
+    background-color: #5a3166;
+    outline: 2px solid #392844;
+}
+
+.btn {
+    display: block;
+    color: #754383;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.btn:hover, 
+.btn:focus-visible {
+    text-decoration: underline;
+}
+
+fieldset {
+    border: 1px solid #754383;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+legend {
+    color: #754383;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+/* Четкий фокус при переходе по Tab (Требование из фото) */
+a:focus-visible, 
+input:focus-visible, 
+select:focus-visible, 
+textarea:focus-visible, 
+button:focus-visible {
+    outline: 3px solid #C2410C !important;
+    outline-offset: 3px;
+}
+
+input[type="checkbox"]:focus-visible {
+    outline: 3px solid #C2410C !important;
+    outline-offset: 4px;
+    accent-color: #754383 !important;
+}
+
+/* Исправленный фокус для полей ввода (убрана заглушка box-shadow) */
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+    background-color: #FFFFFF !important;
+    border: 2px solid #754383 !important;
+    border-radius: 0px !important;
+    outline: 3px solid #C2410C !important;
+    outline-offset: 1px;
+}
+
+.request-form button:focus-visible,
+button[type="submit"]:focus-visible {
+    background-color: #754383;
+    color: #FFFFFF;
+}
+
+/* Медиазапрос для узкого экрана (Шаг 5) */
+@media (max-width: 600px) {
+    main.page {
+        padding: 0.75rem;
+    }
+    .products > .card {
+        flex-basis: 100%;
+    }
+}
+/* Стили для кнопок управления списком (#show-names и #hide-names) */
+#show-names,
+#hide-names {
+    display: inline-block;
+    padding: 10px 16px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #754383;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Основная кнопка (залитая фиолетовая, как кнопка отправки) */
+#show-names {
+    background-color: #754383;
+    color: #FFFFFF;
+}
+
+#show-names:hover {
+    background-color: #5a3166;
+    border-color: #5a3166;
+}
+
+/* Второстепенная кнопка (белая с фиолетовой рамкой, как пункты меню) */
+#hide-names {
+    background-color: #FFFFFF;
+    color: #754383;
+}
+
+#hide-names:hover {
+    background-color: #754383;
+    color: #FFFFFF;
+}
