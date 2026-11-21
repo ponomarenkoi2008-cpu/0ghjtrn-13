@@ -6,6 +6,8 @@
     <title>Приют для животных — Главная</title>
     <link rel="stylesheet" href="style.css">
     <script src="catalog.js" defer></script>
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#754383">
 </head>
 <body>
     <header>
@@ -17,8 +19,9 @@
             <a href="catalog.html">Каталог</a>
             <a href="form.html">Заявка</a>
         </nav>
-
+        
         <h1>Добро пожаловать в приют</h1>
+        <p>Учебная версия 1</p>
 
         <!-- Абзац статуса для скрипта -->
         <p id="status" role="status"></p>
@@ -34,6 +37,16 @@
             <button id="hide-names" type="button">Скрыть названия</button>
         </p>
         <ul id="names"></ul>
-    </main>
+    
+</main>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./sw.js").catch((error) => {
+          console.error("Не удалось зарегистрировать service worker:", error);
+        });
+      }
+    </script>
+
 </body>
 </html>

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>План знакомства · V24</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#754383">
+
 </head>
 <body>
     <header>
@@ -64,8 +67,18 @@
         </form>
 
         <p><a class="btn" href="index.html">Назад</a></p>
+ 
     </main>
 
     <script src="form.js" defer></script>
+    
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./sw.js").catch((error) => {
+          console.error("Не удалось зарегистрировать service worker:", error);
+        });
+      }
+    </script>
+
 </body>
 </html>

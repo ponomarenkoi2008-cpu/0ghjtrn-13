@@ -46,3 +46,9 @@ form.addEventListener("submit", function (event) {
     submitCount = submitCount + 1;
     result.textContent = "Проверка " + submitCount + ". " + itemName + ". " + message;
 });
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js");
+  });
+}

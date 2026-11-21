@@ -84,3 +84,9 @@ searchInput.addEventListener("input", function () {
     const found = filterByText(catalog, searchInput.value);
     renderCatalog(found);
 });
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js");
+  });
+}

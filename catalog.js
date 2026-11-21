@@ -137,3 +137,9 @@ if (form) {
 // 6. Подсчёт всех абзацев <p> на странице (из дополнительного задания)
 const allParagraphs = document.querySelectorAll("p");
 console.log("Количество абзацев <p> на странице:", allParagraphs.length);
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js");
+  });
+}
