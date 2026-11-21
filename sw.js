@@ -16,7 +16,9 @@ const FILES = [
   "./manifest.webmanifest",
   "./images/item1.png",
   "./images/item2.png",
-  "./images/item3.png"
+  "./images/item3.png",
+  "./images/icon-192.png",
+  "./images/icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
